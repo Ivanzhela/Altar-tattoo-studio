@@ -4,24 +4,24 @@ const artistsData = [
     name: 'Nino Dinchev',
     styles: "Realism  |  traditional  |  dotwork",
     desc: 'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex hic iure amet dolorum?',
-    img: '/nino2.png',
-  photo: '/Nino.jpg'
+    img: './nino2.png',
+  photo: './Nino.jpg'
   },
   {
     slug: 'katerina-boyadzhieva',
     name: 'Katerina Boyadzhieva',
     styles: "Realism  |  traditional  |  dotwork",
     desc: 'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex hic iure amet dolorum?',
-    img: '/Kate-removebg-preview.png',
-  photo: '/Kate.jpg'
+    img: './Kate-removebg-preview.png',
+  photo: './Kate.jpg'
   },
     {
       slug: 'stoyan-bozhilov',
       name: "Stoyan Bozhilov",
     styles: "Realism  |  traditional  |  dotwork",
     desc: 'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex hic iure amet dolorum?',
-    img: '/stoyan-removebg-preview.png',
-    photo: '/stoyan.jpg'
+    img: './stoyan-removebg-preview.png',
+    photo: './stoyan.jpg'
   },
     {
     slug: 'katerina-boyadzhieva',
