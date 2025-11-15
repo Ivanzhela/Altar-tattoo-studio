@@ -89,19 +89,6 @@ header img {
   padding: 18px;
 }
 
-.contacts {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-}
-
-.contacts div {
-  max-width: 200px;
-}
-
-.contacts .contact {
-  text-align: end;
-}
 
 /* h1,h2,h3 {
   color: #ffc600;
@@ -112,7 +99,8 @@ section > div:first-child p:first-child {
 }
 
 a {
-  color: #ffc600;
+  color: #ffffff;
+text-decoration: none;
 }
 /* .address p{
   position: relative;
@@ -160,9 +148,7 @@ a {
   align-items: center;
   list-style: none;
   gap: 60px;
-    /* padding: 30px 30px; */
-    
-
+  /* padding: 30px 30px; */
 }
 
 .navbar li,
@@ -175,7 +161,7 @@ a {
   position: relative;
 }
 .navbar a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   bottom: -8px;
@@ -185,7 +171,6 @@ a {
   height: 1px; /* дебелина на линията */
   background-color: #ffc600;
   transition: transform 0.3s ease;
-  
 }
 
 .navbar a:hover::after {
@@ -320,7 +305,7 @@ a {
 .hero-content p {
   max-width: 700px;
   margin-bottom: 40px;
-  color:#aaa
+  color: #aaa;
 }
 
 .btn {
@@ -376,8 +361,8 @@ a {
 }
 
 .info-box a:hover {
-    color: #ffc600;
-    border-bottom: 1px solid #ffc600;
+  color: #ffc600;
+  border-bottom: 1px solid #ffc600;
 }
 
 /* Showcase Section */
@@ -559,7 +544,7 @@ a {
   opacity: 1;
 }
 
- .line {
+.line {
   width: 100%;
   color: #ffc600;
   /* border-bottom: 1px solid #ffc600; */
@@ -567,12 +552,16 @@ a {
   margin-top: 40px;
 }
 
+.hero-artist .showcase {
+  padding-bottom: 200px;
+}
 /* altar br */
 .altar-br {
   display: flex;
   padding: 20px 80px;
   justify-content: center;
   align-items: center;
+  background-color:#111;
 }
 
 .altar-br div {
@@ -593,7 +582,7 @@ a {
 .contact-us {
   padding: 40px 220px 120px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   align-items: center;
 }
@@ -604,15 +593,46 @@ a {
 
 .contact-us p {
   width: 90%;
-  margin: 20px 0;
   color: #aaa;
 }
+
+.contact-us-content {
+  width: 50%;
+}
+
+.contact-us-content > p:nth-child(3) {
+  margin: 20px 0;
+}
+
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(2, 300px); /* 2 колони с еднаква ширина */
+  grid-template-rows: repeat(2, 100px); 
+  border-top: 1px solid #ffc8006a;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.contact img {
+  width: 40px;
+  opacity: 0.6;
+}
+.contact p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.791);
+}
+
 
 .contact-us form {
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: flex-start;
+  width: 40%;
 }
 .contact-us form input {
   background-color: transparent;
@@ -644,16 +664,16 @@ a {
   width: 0;
 }
 
-.checkmark {
+/* .checkmark {
   position: absolute;
   top: 0;
   left: 0;
   height: 25px;
   width: 25px;
   border: 1px solid rgba(255, 255, 255, 0.511);
-}
+} */
 
-.container:hover input ~ .checkmark {
+/* .container:hover input ~ .checkmark {
   background-color: #757575;
 }
 
@@ -665,13 +685,13 @@ a {
   content: "";
   position: absolute;
   display: none;
-}
+} */
 
-.container input:checked ~ .checkmark:after {
+/* .container input:checked ~ .checkmark:after {
   display: block;
-}
+} */
 
-.container .checkmark:after {
+/* .container .checkmark:after {
   left: 9px;
   top: 5px;
   width: 5px;
@@ -681,37 +701,39 @@ a {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
+} */
 
 .contact-us button {
   width: 180px;
+  margin-top: 20px;
 }
 
-.contact-us > img {
+/* .contact-us > img {
   position: absolute;
   top: -600px;
   left: -340px;
   opacity: 0.4;
-  /* transform: scaleX(-1); */
   z-index: 0;
   filter: brightness(0.5);
-}
+  
+} */
 
 .contact-us .location {
   position: relative;
 }
 
 .contact-us .location img:first-child {
-  width: 100%;
+  width: 80%;
   object-fit: cover;
   filter: grayscale(1) invert(1.8);
+    align-items: flex-end;
 }
-.contact-us .location img:last-child {
+/* .contact-us .location img:last-child {
   position: absolute;
   top: 40%;
   left: 46%;
   width: 32px;
-}
+} */
 /* feedback */
 .feedback {
   display: flex;
@@ -774,35 +796,88 @@ a {
 
 /* footer */
 
-footer {
+.footer {
+  position: relative;
   display: flex;
   padding: 80px 10%;
   justify-content: space-around;
-  background-color: #111;
   text-align: center;
   align-items: flex-start;
+  background-color: transparent;
+  /* overflow: hidden; */
+  height: 400px;
+}
+
+.footer::before {
+  content: "";
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://images.pexels.com/photos/2183132/pexels-photo-2183132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  animation: parallax-footer linear both;
+  animation-timeline: scroll();
+    animation-range: 50% 100%;
+  /* animation-range: 1000px 2400px; */
+  filter: brightness(30%) grayscale(0.4);
+  z-index: -10;
+}
+
+@keyframes parallax-footer {
+  0% {
+    background-position: center -800px;
+  }
+  100% {
+    background-position: center -400px;
+  }
 }
 footer p {
   font-size: 18px;
-  color: #aaa;
+  color: #ffffff;
 }
 footer div {
   flex: 1;
 }
 
-footer div:first-child img {
+
+footer .footer-logo img {
   filter: invert(1);
 }
-
-footer h3 {
-  text-transform: uppercase;
+footer .footer-logo h4 {
+  color: #ffc600;
   font-size: 28px;
 }
+
+.footer .footer-contacts {
+  display: flex;
+  flex-direction: column;
+gap: 20px;
+font-size: 24px;
+}
+
+.footer .footer-contacts > * {
+  font-size: 20px;
+  color: white;
+}
+
+.footer div p:first-child{
+  color: #aaa;
+  font-size: 28px;
+}
+
 .footer-social {
   padding: 20px;
   display: flex;
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 .footer-social i {
   font-size: 34px;
@@ -812,11 +887,9 @@ footer div a {
   color: #aaa;
   font-size: 18px;
   text-decoration: none;
+  display: block;
 }
 
-footer div a:nth-child(3) {
-  border-bottom: 1px solid #969696;
-}
 
 @media (max-width: 500px) {
   .altar-br {
@@ -856,7 +929,7 @@ footer div a:nth-child(3) {
     flex: none;
   }
   .artist-info {
-    min-width:min-content;
+    min-width: min-content;
   }
   .contact-us {
     padding: 40px;

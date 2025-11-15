@@ -46,7 +46,11 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Altar Tattoo Studio</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -73,8 +77,8 @@ export default function RootLayout({ children }) {
               <Link href="/#contact">Contacts</Link>
               <Link href="/#artists">Artists</Link>
               <img src="/Altar-tattoo-studio/logo.png" alt="Logo" />
-              <Link href='/'>About</Link>
-              <Link href='/'>Shop</Link>
+              <Link href="/">About</Link>
+              <Link href="/">Shop</Link>
               <Link href="/#showcaase">Showcase</Link>
             </ul>
           </nav>
@@ -82,11 +86,13 @@ export default function RootLayout({ children }) {
 
         <main>{children}</main>
 
-        <footer>
-          <div>
+        <footer className="footer">
+          <div className="footer-logo">
             <img src="/Altar-tattoo-studio/logo.png" alt="logo" />
+            <h4>Altar Tattoo Sofia</h4>
           </div>
-          <div>
+          <div className="footer-contacts">
+            <p>Contact us</p>
             <h3>+359 887 663 355</h3>
             <a
               href="https://www.google.bg/maps/place/%D0%9E%D0%BB%D1%82%D0%B0%D1%80/@42.689527,23.3200823,17z/data=!3m1!4b1!4m6!3m5!1s0x40aa851287e0c8b5:0xf3f2fb1c8a21c3f7!8m2!3d42.689527!4d23.3200823!16s%2Fg%2F11b635xrst?entry=ttu&g_ep=EgoyMDI1MDMxOC4wIKXMDSoASAFQAw%3D%3D"
@@ -96,14 +102,9 @@ export default function RootLayout({ children }) {
               Han Asparuh 28, Sofia, Bulgaria 1000
             </a>
             <a href="mailto:altar@tattoo.com">altar@tattoo.com</a>
-            <div className="footer-social">
-              <i className="fa fa-instagram"></i>
-              <i className="fa fa-facebook-square"></i>
-              <i className="fa fa-reddit-square"></i>
-            </div>
           </div>
-          <div>
-            <h3>Working hours</h3>
+          <div className="footer-working-time">
+            <p>Working hours</p>
             <p>Monday: .......... 9:00 - 18:00</p>
             <p>Tuesday: .......... 9:00 - 18:00</p>
             <p>Wednesday: ...... 9:00 - 18:00</p>
@@ -112,11 +113,10 @@ export default function RootLayout({ children }) {
             <p>Saturday: ......... 9:00 - 18:00</p>
             <p>Sunday: day off</p>
           </div>
-          <div>
-            <h3>Contact Us</h3>
-            <p>Lorem, ipsum.</p>
-            <p>Lorem, ipsum.</p>
-            <p>Lorem, ipsum.</p>
+          <div className="footer-social">
+            <i className="fa fa-instagram"></i>
+            <i className="fa fa-facebook-square"></i>
+            <i className="fa fa-reddit-square"></i>
           </div>
         </footer>
       </body>

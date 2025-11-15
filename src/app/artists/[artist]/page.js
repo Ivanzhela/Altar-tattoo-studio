@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import style from "./artist.module.css";
 import artistsData from "../../../data/artistsData";
+import GalleryCarousel from "@/components/GalleryCarousel";
 
 export function generateStaticParams() {
   return artistsData.map((artist) => ({
@@ -44,16 +45,16 @@ export default async function ArtistPage({ params }) {
         <p className="btn">Traditional</p>
         <p className="btn">Dotwork</p> */}
       </section>
-      <section className="showcase">
+      <section className={style['artist-showcase']}>
         <div>
-          <p>Gallery</p>
-          <h2>All</h2>
+          <p>Check out my</p>
+          <h2>Work</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex hic
             iure amet dolorum explicabo placeat maiores nulla voluptate facilis?
           </p>
         </div>
-        <div className="gallery">
+        {/* <div className="gallery">
           <div className="img-container">
             <img
               src="https://images.pexels.com/photos/955938/pexels-photo-955938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -140,8 +141,10 @@ export default async function ArtistPage({ params }) {
             />
             <p className="img-title">Nino Dinchev</p>
           </div>
-        </div>
+        </div> */}
+        <GalleryCarousel/>
       </section>
+      
     </>
   );
 }

@@ -1,0 +1,71 @@
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 400px;
+}
+
+.track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  scroll-snap-type: x mandatory;
+  flex: 1;
+  height: 100%;
+}
+
+.track img {
+  width: 25%;       /* 4 изображения на ред */
+  height: 100%;    /* фиксирана височина */
+  object-fit: cover; /* изрязва изображението, за да пасне на контейнера */
+  border-radius: 8px;
+  flex-shrink: 0;   /* да не се свива изображението */
+}
+
+.prev,
+.next {
+    width: 60px;
+    height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  /* top: 50%;
+  transform: translateY(-50%); */
+  z-index: 10;
+  border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding-bottom: 6px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+.track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  scroll-snap-type: x mandatory;
+  flex: 1;
+
+  /* Скриване на scrollbar */
+  scrollbar-width: none; /* за Firefox */
+  -ms-overflow-style: none; /* за IE и Edge */
+}
+
+.track::-webkit-scrollbar {
+  display: none; /* за Chrome, Safari и Edge */
+}

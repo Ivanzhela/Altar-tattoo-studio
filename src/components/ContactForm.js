@@ -21,48 +21,66 @@ export default function ContactForm() {
   return (
     <section id="contact" className="contact-us">
       <div className="contact-us-content">
-        <h2>Contact us</h2>
+        <p>Check out our</p>
+        <h2>Contacts</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-          consequatur nisi.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam
+          dignissimos doloribus pariatur, eos repudiandae enim, voluptate, quod
+          aspernatur suscipit ab ipsa tempora animi corporis eius natus ullam
+          iusto vitae cupiditate! Quod, eligendi voluptas maiores pariatur
+          beatae incidunt.
         </p>
-        <form onSubmit={handleSubmit}>
-          <input
-            name="name"
-            type="text"
-            placeholder="Name"
-            onChange={handleChange}
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            onChange={handleChange}
-          />
-          <input
-            name="phone"
-            type="number"
-            placeholder="Phone number"
-            onChange={handleChange}
-          />
-          <input
-            name="comment"
-            type="text"
-            placeholder="Comment"
-            onChange={handleChange}
-          />
-          <button className="btn" type="submit">
-            Send
-          </button>
-        </form>
+        <div className="contacts">
+          <div className="contact">
+            <img src="/Altar-tattoo-studio/map-regular-full.svg"></img>
+            <p>Han Asparuh 28, Sofia, Bulgaria 1000</p>
+          </div>
+          <div className="contact">
+            <img src="/Altar-tattoo-studio/phone-solid-full.svg"></img>
+            <p>+359 887 663 355</p>
+          </div>
+          <div className="contact">
+            <img src="/Altar-tattoo-studio/clock-regular-full.svg"></img>
+            <p>Mon - Sat: 9:00 - 18:00 Sunday: Day Off</p>
+          </div>
+          <div className="contact">
+            <img src="/Altar-tattoo-studio/envelope-regular-full.svg"></img>
+            <p>ltar@tattoo.com</p>
+          </div>
+        </div>
       </div>
-      <div className="location">
-        <img src="/map.png" alt="map" />
-        <img
-          src="https://static.vecteezy.com/system/resources/thumbnails/024/831/288/small/3d-render-red-pin-map-location-pointer-icon-png.png"
-          alt=""
+      <form onSubmit={handleSubmit}>
+        <input
+          name="name"
+          type="text"
+          placeholder="Name"
+          onChange={handleChange}
         />
-      </div>
+        <input
+          name="email"
+          type="email"
+          placeholder="Email"
+          onChange={handleChange}
+        />
+        <input
+          name="phone"
+          type="number"
+          placeholder="Phone number"
+          onChange={handleChange}
+        />
+        <input
+          name="comment"
+          type="text"
+          placeholder="Comment"
+          onChange={handleChange}
+        />
+        <button className="btn" type="submit">
+          Send
+        </button>
+      </form>
+      {/* <div className="location">
+        <img src="/Altar-tattoo-studio/map.png" alt="map" />
+      </div> */}
     </section>
   );
 }
