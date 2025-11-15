@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
               <Link href="/">Home</Link>
               <Link href="/#contact">Contacts</Link>
               <Link href="/#artists">Artists</Link>
-              <img src="/logo.png" alt="Logo" />
+              <img src="/Altar-tattoo-studio/logo.png" alt="Logo" />
               <Link href='/'>About</Link>
               <Link href='/'>Shop</Link>
               <Link href="/#showcaase">Showcase</Link>
@@ -84,7 +84,7 @@ export default function RootLayout({ children }) {
 
         <footer>
           <div>
-            <img src="/logo.png" alt="" />
+            <img src="/Altar-tattoo-studio/logo.png" alt="logo" />
           </div>
           <div>
             <h3>+359 887 663 355</h3>
