@@ -5,21 +5,14 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
         with:
           node-version: 20
 
@@ -30,18 +23,17 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./out
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
 
     steps:
       - name: Deploy to GitHub Pages
-        id: deploy
         uses: actions/deploy-pages@v4
