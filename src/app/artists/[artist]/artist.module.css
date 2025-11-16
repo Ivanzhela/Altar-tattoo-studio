@@ -1,4 +1,264 @@
 .hero-artist {
+  height: 100vh;
+  position: relative;
+  background-color: transparent;
+
+}
+
+.hero-artist::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://images.pexels.com/photos/2231633/pexels-photo-2231633.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  animation: parallax-move linear both;
+  animation-timeline: scroll();
+  animation-range: 0 800px;
+  filter: brightness(50%) grayscale(0.3);
+  z-index: -1;
+}
+
+@keyframes parallax-move {
+  0% {
+    background-position: center -100px;
+  }
+  100% {
+    background-position: center -600px;
+  }
+}
+
+.hero-artist img:first-child {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  transition: all 2s;
+  filter: grayscale(1) drop-shadow(4px 1px 20px black);
+  width: 200%;
+  
+}
+
+.hero-artist .artist-img {
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.artist-content {
+  width: 60%;
+  text-align: end;
+  position: absolute;
+  bottom: 30%;
+  right: 5%;
+  transition: opacity 2s;
+}
+
+.artist-content h1 {
+  font-size: 46px;
+  margin-bottom: 8px;
+}
+
+.artist-content h2 {
+  color: #ffc600;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.artist-content p {
+  min-height: auto;
+  color: #ffffffa4;
+  font-size: 14px;
+}
+
+.artist-content .bio {
+  display: none;
+}
+
+.artist-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 30px 20px;
+  background-color: #222;
+  height: auto;
+}
+.artist-category .bio {
+  padding: 0 10px;
+}
+.artist-category .bio h2 {
+  font-size: 28px;
+  color: #ffc600;
+  margin-bottom: 10px;
+}
+.artist-category i {
+  font-size: 24px;
+}
+
+.artist-category i:hover {
+  color: #ffc600;
+  cursor: pointer;
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social i {
+  font-size: 24px;
+}
+
+.artist-showcase {
+  padding: 30px 10px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.artist-showcase > div:first-child {
+  margin-bottom: 40px;
+}
+.artist-showcase h2 {
+  margin-bottom: 16px;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+.artist-showcase p {
+  color: #aaa;
+  font-size: 14px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+
+@media (min-width: 768px) {
+  .hero-artist {
+    height: 400px;
+  }
+
+  .hero-artist h1 {
+    font-size: 36px;
+  }
+
+  .hero-artist img:first-child {
+    width: 300px;
+  }
+
+  .artist-content {
+    width: 70%;
+    text-align: end;
+    right: 10%;
+    left: auto;
+    transform: none;
+  }
+  .artist-content .bio {
+    display: flex;
+  }
+
+  .artist-content h1 {
+    font-size: 40px;
+  }
+
+  .artist-content h2 {
+    font-size: 18px;
+  }
+
+  .artist-showcase h2 {
+    font-size: 40px;
+  }
+
+  .artist-showcase p {
+    font-size: 16px;
+    max-width: 600px;
+  }
+  .artist-category {
+    align-items: flex-end;
+  }
+
+  .artist-category .bio {
+    display: none;
+  }
+  .artist-category i,
+  .social i {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-artist {
+    height: 500px;
+  }
+
+  .hero-artist h1 {
+    font-size: 48px;
+  }
+
+  .hero-artist img:first-child {
+    width: 500px;
+    bottom: -100px;
+    left: 28%;
+  }
+
+  .artist-content {
+    width: 35%;
+    bottom: 5%;
+    right: 14%;
+    text-align: end;
+  }
+
+  .artist-content h1 {
+    font-size: 48px;
+  }
+
+  .artist-content h2 {
+    font-size: 18px;
+  }
+
+  .artist-category {
+    height: 100px;
+  }
+
+  .artist-showcase h2 {
+    font-size: 48px;
+  }
+
+  .artist-showcase p {
+    font-size: 16px;
+  }
+  .artist-category .social {
+    margin-right: 14%;
+    gap: 20px;
+  }
+  .artist-category i,
+  .social i {
+    font-size: 34px;
+  }
+  .artist-showcase {
+  padding: 60px 20px 200px;
+  text-align: center;
+  padding-bottom: 200px;
+}
+.artist-showcase > div {
+  padding: 30px;
+}
+
+.artist-showcase > div:first-child {
+  margin-bottom: 0px;
+}
+}
+
+/* .hero-artist {
   height: 500px;
   position: relative;
   background-color: transparent;
@@ -52,7 +312,7 @@
 }
 
 .artist-content {
-  width: 30%;
+  width: 35%;
   text-align: end;
   position: absolute;
   bottom: 5%;
@@ -99,6 +359,11 @@
   font-size: 32px;
 }
 
+.artist-category i:hover {
+  color: #ffc600;
+  cursor: pointer;
+}
+
 .artist-showcase {
   padding: 60px 20px;
   text-align: center;
@@ -115,8 +380,10 @@
 
 .artist-showcase p {
   color: #aaa;
-  /* margin-bottom: 40px; */
   font-size: 16px;
   max-width: 600px;
   margin: 0 auto;
+} */
+
+@media (min-width: 1200px) {
 }

@@ -10,7 +10,7 @@ export function generateStaticParams() {
 }
 
 export default async function ArtistPage({ params }) {
-  const resolvedParams = await params; // ✅ unwrap the Promise
+  const resolvedParams = await params;
   const artist = resolvedParams.artist;
   const artistInfo = artistsData.find((a) => a.slug === artist);
 
@@ -19,33 +19,33 @@ export default async function ArtistPage({ params }) {
   return (
     <>
       <section className={style["hero-artist"]}>
-        {/* <img src="https://images.pexels.com/photos/2231633/pexels-photo-2231633.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" /> */}
-        <img src={artistInfo.img} alt="Nino" loading="lazy" />
+        <div className={style["artist-img"]}>
+          <img src={artistInfo.img} alt="Nino" loading="lazy" />
+        </div>
         <div className={style["artist-content"]}>
           <h1>{artistInfo.name}</h1>
           <h2>{artistInfo.styles}</h2>
-          <p>
+          <p className={style.bio}>
             {artistInfo.desc}
             {artistInfo.desc}
             {artistInfo.desc}
           </p>
-          {/* <div className={style["social"]}>
-          <i className="fa fa-instagram"></i>
-          <i className="fa fa-facebook-square"></i>
-          <i className="fa fa-reddit-square"></i>
-      </div> */}
         </div>
       </section>
       <section className={style["artist-category"]}>
-        <i className="fa fa-instagram"></i>
-        <i className="fa fa-facebook-square"></i>
-        <i className="fa fa-reddit-square"></i>
-        {/* <p className="btn active">All</p>
-        <p className="btn">Realism</p>
-        <p className="btn">Traditional</p>
-        <p className="btn">Dotwork</p> */}
+        <div className={style.bio}>
+          <h2>Bio</h2>
+          {artistInfo.desc}
+          {artistInfo.desc}
+          {artistInfo.desc}
+        </div>
+        <div className={style.social}>
+          <i className="fa fa-instagram"></i>
+          <i className="fa fa-facebook-square"></i>
+          <i className="fa fa-reddit-square"></i>
+        </div>
       </section>
-      <section className={style['artist-showcase']}>
+      <section className={style["artist-showcase"]}>
         <div>
           <p>Check out my</p>
           <h2>Work</h2>
@@ -142,9 +142,8 @@ export default async function ArtistPage({ params }) {
             <p className="img-title">Nino Dinchev</p>
           </div>
         </div> */}
-        <GalleryCarousel/>
+        <GalleryCarousel />
       </section>
-      
     </>
   );
 }

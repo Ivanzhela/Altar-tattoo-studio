@@ -18,32 +18,29 @@
 }
 
 .track img {
-  width: 25%;       /* 4 изображения на ред */
-  height: 100%;    /* фиксирана височина */
-  object-fit: cover; /* изрязва изображението, за да пасне на контейнера */
-  border-radius: 8px;
-  flex-shrink: 0;   /* да не се свива изображението */
+  width: 24%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .prev,
 .next {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: #ffc600;
   border: none;
   font-size: 2rem;
   cursor: pointer;
   position: absolute;
-  /* top: 50%;
-  transform: translateY(-50%); */
   z-index: 10;
   border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 6px;
 }
 
 .prev {
@@ -60,12 +57,10 @@ padding-bottom: 6px;
   gap: 10px;
   scroll-snap-type: x mandatory;
   flex: 1;
-
-  /* Скриване на scrollbar */
-  scrollbar-width: none; /* за Firefox */
-  -ms-overflow-style: none; /* за IE и Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .track::-webkit-scrollbar {
-  display: none; /* за Chrome, Safari и Edge */
+  display: none;
 }
