@@ -2,9 +2,36 @@
   height: 100vh;
   position: relative;
   background-color: transparent;
-
 }
 
+.hero-artist::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://images.pexels.com/photos/2231633/pexels-photo-2231633.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  animation: parallax-move linear both;
+  animation-timeline: scroll();
+  animation-range: 0 600px;
+  filter: brightness(50%) grayscale(0.3);
+  z-index: -1;
+}
+
+@keyframes parallax-move {
+  0% {
+    background-position: center 000px;
+  }
+  100% {
+    background-position: center -200px;
+  }
+}
+/* 
 .hero-artist::before {
   content: "";
   position: absolute;
@@ -30,8 +57,7 @@
   100% {
     background-position: center -600px;
   }
-}
-
+} */
 .hero-artist img:first-child {
   position: absolute;
   bottom: 0;
@@ -41,7 +67,6 @@
   transition: all 2s;
   filter: grayscale(1) drop-shadow(4px 1px 20px black);
   width: 200%;
-  
 }
 
 .hero-artist .artist-img {
@@ -141,7 +166,6 @@
   margin: 0 auto;
 }
 
-
 @media (min-width: 768px) {
   .hero-artist {
     height: 400px;
@@ -200,6 +224,11 @@
     height: 500px;
   }
 
+  .hero-artist .artist-img {
+    overflow: visible;
+    width: 100%;
+  }
+
   .hero-artist h1 {
     font-size: 48px;
   }
@@ -245,17 +274,31 @@
     font-size: 34px;
   }
   .artist-showcase {
-  padding: 60px 20px 200px;
-  text-align: center;
-  padding-bottom: 200px;
-}
-.artist-showcase > div {
-  padding: 30px;
-}
+    padding: 60px 20px 200px;
+    text-align: center;
+    padding-bottom: 200px;
+  }
+  .artist-showcase > div {
+    padding: 30px;
+  }
 
-.artist-showcase > div:first-child {
-  margin-bottom: 0px;
-}
+  .artist-showcase > div:first-child {
+    margin-bottom: 0px;
+  }
+
+  .hero-artist::before {
+    background-size: 100%;
+    animation-range: 0 800px;
+  }
+
+  @keyframes parallax-move {
+    0% {
+      background-position: center -100px;
+    }
+    100% {
+      background-position: center -600px;
+    }
+  }
 }
 
 /* .hero-artist {
@@ -384,6 +427,3 @@
   max-width: 600px;
   margin: 0 auto;
 } */
-
-@media (min-width: 1200px) {
-}
